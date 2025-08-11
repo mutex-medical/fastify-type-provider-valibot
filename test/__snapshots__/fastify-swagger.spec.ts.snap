@@ -42,12 +42,14 @@ exports[`transformer generates types for fastify-swagger correctly 1`] = `
               "schema": {
                 "properties": {
                   "password": {
+                    "maxLength": 32,
                     "type": "string",
                   },
                   "seed": {
                     "type": "number",
                   },
                   "username": {
+                    "maxLength": 32,
                     "type": "string",
                   },
                 },
@@ -134,9 +136,11 @@ exports[`transformer should not generate ref 1`] = `
               "schema": {
                 "properties": {
                   "access_token": {
+                    "maxLength": 12,
                     "type": "string",
                   },
                   "refresh_token": {
+                    "maxLength": 12,
                     "type": "string",
                   },
                 },
