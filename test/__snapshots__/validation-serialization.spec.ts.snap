@@ -4,7 +4,7 @@ exports[`Fastify Type Provider Valibot Validation should be able to tell that va
 {
   "code": "FST_ERR_VALIDATION",
   "error": "Bad Request",
-  "message": "Invalid type: Expected string but received undefined",
+  "message": "Invalid key: Expected "value" but received undefined",
   "statusCode": 400,
 }
 `;

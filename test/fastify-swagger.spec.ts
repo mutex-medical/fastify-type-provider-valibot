@@ -30,9 +30,9 @@ describe('transformer', () => {
     });
 
     const LOGIN_SCHEMA = v.object({
-      username: v.string([v.maxLength(32, 'someDescription')]),
+      username: v.pipe(v.string(), v.maxLength(32, 'someDescription')),
       seed: v.number(),
-      password: v.string([v.maxLength(32)]),
+      password: v.pipe(v.string(), v.maxLength(32)),
     });
 
     const UNAUTHORIZED_SCHEMA = v.object({
@@ -116,7 +116,7 @@ describe('transformer', () => {
       routePrefix: '/documentation',
     });
 
-    const TOKEN_SCHEMA = v.string([v.maxLength(12)]);
+    const TOKEN_SCHEMA = v.pipe(v.string(), v.maxLength(12));
 
     app.after(() => {
       app.withTypeProvider<ValibotTypeProvider>().route({

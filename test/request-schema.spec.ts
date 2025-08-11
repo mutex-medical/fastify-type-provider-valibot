@@ -1,4 +1,4 @@
-import type { FastifyInstance } from 'fastify';
+import type { FastifyInstance, FastifyRequest } from 'fastify';
 import Fastify from 'fastify';
 import * as v from 'valibot';
 
@@ -25,7 +25,7 @@ describe('response schema', () => {
           schema: {
             querystring: REQUEST_SCHEMA,
           },
-          handler: (req, res) => {
+          handler: (req: FastifyRequest<{ Querystring: v.InferInput<typeof REQUEST_SCHEMA> }>, res) => {
             res.send({
               name: req.query.name,
             });
